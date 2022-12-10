@@ -39,9 +39,9 @@ app.get("/profile", (req,res)=> {
 })
 
 app.post("/logout", (req,res)=>{
-    req.logout()
+  /*   req.logout()
    req.session=null;
-    res.redirect("/") 
+    res.redirect("/")  */
     /* req.session.destroy(err=>{
         if(err){
             console.log(err)
@@ -51,15 +51,16 @@ app.post("/logout", (req,res)=>{
             res.redirect("/")
            }
     }) */
-    /* req.logOut(err=>{
+     req.logOut(err=>{
        if(err){
         console.log(err)
         return res.send(err.message)
        }else{
-        res.clearCookie("connect.sid",{path:"/"})
+        req.user=null
+        req.clearCookie("connect.sid",{path:"/"})
         res.redirect("/")
        } 
-    })*/
+    })
     
     
         
