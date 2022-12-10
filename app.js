@@ -40,15 +40,17 @@ app.get("/profile", (req,res)=> {
 
 app.post("/logout", (req,res)=>{
     req.logout()
-    req.session.destroy(err=>{
+    res.session=null;
+    res.redirect("/")
+    /* req.session.destroy(err=>{
         if(err){
             console.log(err)
             return res.send(err.message)
            }else{
-            res.clearCookie("connect.sid",{path:"/"})
+            res.clearCookie("sid",{path:"/"})
             res.redirect("/")
            }
-    })
+    }) */
     /* req.logOut(err=>{
        if(err){
         console.log(err)
