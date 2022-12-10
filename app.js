@@ -39,7 +39,7 @@ app.get("/profile", (req,res)=> {
 })
 
 app.post("/logout", (req,res)=>{
-    req.logout(err=>{
+    req.logOut(err=>{
        if(err){
         console.log(err)
         return res.send(err.message)
