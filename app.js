@@ -44,6 +44,7 @@ app.post("/logout", (req,res)=>{
         console.log(err)
         return res.send(err.message)
        }else{
+        res.clearCookie("connect.sid",{path:"/"})
         res.redirect("/")
        }
     })
