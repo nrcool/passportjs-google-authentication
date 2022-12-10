@@ -40,9 +40,9 @@ app.get("/profile", (req,res)=> {
 
 app.post("/logout", (req,res)=>{
     req.logout()
- /*    req.session=null;
-    res.redirect("/") */
-    req.session.destroy(err=>{
+   req.session=null;
+    res.redirect("/") 
+    /* req.session.destroy(err=>{
         if(err){
             console.log(err)
             return res.send(err.message)
@@ -50,7 +50,7 @@ app.post("/logout", (req,res)=>{
             req.clearCookie("connect.sid",{path:"/"})
             res.redirect("/")
            }
-    })
+    }) */
     /* req.logOut(err=>{
        if(err){
         console.log(err)
